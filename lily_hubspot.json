@@ -1,0 +1,51 @@
+{
+    "id": "hubspot",
+    "name": "Hubspot",
+    "logo": "hubspot-icon.svg",
+    "operation": [
+    {
+      "id": "fetchWebsitePages",
+      "name": "Fetch Website Pages",
+      "configuration": {
+        "apiConfig": {
+          "method": "GET",
+          "url": "https://api.hubapi.com/cms/v3/pages/site-pages",
+          "oauth": {
+            "linkedAccountId": "[[hubspotLinkedAccount]]"
+          },
+          "pagination": {
+            "cursorPagination": {
+              "cursor": "paging.next.link",
+              "cursorType": "FULL_URL",
+              "detectCursorInHeader": false
+            }
+          },
+          "perSecondRequestLimit": 10,
+          "headers": {},
+          "queryParams": {},
+          "format": "JSON"
+        }
+      },
+      "baseSelector": {
+        "jsonSelector": {
+          "label": "label",
+          "content": "results"
+        }
+      },
+      "input": [
+        {
+          "id": "hubspotLinkedAccount",
+          "name": "HubSpot Linked Account",
+          "tooltip": "The HubSpot account to use to fetch data from.",
+          "typeId": "type.linked_account_reference",
+          "type": {
+            "linkedAccountReferenceType": {
+              "supportedProvider": ["hubspot"]
+          }
+        },
+          "sensitive": false
+        }
+      ]
+    }
+  ]
+}
