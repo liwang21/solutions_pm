@@ -6,6 +6,7 @@
     {
       "id": "fetchWebsitePages",
       "name": "Fetch Website Pages",
+      "productFeatureId": [540],
       "configuration": {
         "apiConfig": {
           "method": "GET",
