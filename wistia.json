@@ -1,0 +1,55 @@
+{
+    "id": "wistia",
+    "name": "Wistia",
+    "logo": "wistia-icon.svg",
+    "operation": [
+        {
+            "id": "fetchVideos",
+            "name": "Fetch Videos",
+            "configuration": {
+                "apiConfig": {
+                    "method": "GET",
+                    "url": "https://api.wistia.com/v1/medias.json",
+                    "authentication": {
+                        "bearerToken": "[[bearerToken]]"
+                    },
+                    "paginationControl": {
+                        "pageBasedPagination": {
+                            "pageKey": "page",
+                            "pageStartValue": 1,
+                            "limitKey": "per_page",
+                            "limitValue": 100
+                        }
+                    },
+                    "perSecondRequestLimit": 10,
+                    "headers": {},
+                    "queryParams": {},
+                    "dataFormat": "JSON"
+                }
+            },
+            "baseSelector": {
+                "type": "JSON",
+                "header": "Entity Container",
+                "path": "[*]"
+            },
+            "input": [
+                {
+                    "id": "bearerToken",
+                    "name": "Bearer Token",
+                    "tooltip": "The master token automatically generated for your Wistia account. You can find it in the API Tab of your Account Settings.",
+                    "typeId": "type.string",
+                    "type": {
+                        "stringType": {
+                            "stereotype": "SIMPLE",
+                            "maxLength": 100,
+                            "contentFlags": {
+                                "noHtmlTags": false
+                            }
+                        }
+                    },
+                    "sensitive": false
+                }
+            ]
+        }
+    ]
+}
