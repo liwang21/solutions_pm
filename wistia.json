@@ -17,7 +17,7 @@
                     "paginationControl": {
                         "pageBasedPagination": {
                             "pageKey": "page",
-                            "pageStartValue": 1
+                            "limitKey": "per_page"
                         }
                     },
                     "perSecondRequestLimit": 10,
