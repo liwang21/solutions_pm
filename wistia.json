@@ -6,7 +6,6 @@
         {
             "id": "fetchVideos",
             "name": "Fetch Videos",
-            "productFeatureId": [540],
             "configuration": {
                 "apiConfig": {
                     "method": "GET",
