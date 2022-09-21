@@ -23,7 +23,7 @@
                     "perSecondRequestLimit": 10,
                     "headers": {},
                     "queryParams": {},
-                    "dataFormat": "JSON"
+                    "format": "JSON"
                 }
             },
             "baseSelector": {
