@@ -100,7 +100,7 @@
       },
       {
         "id": "fetchRemoteVideoMedia",
-        "name": "Fetch Remote Video Media",
+        "name": "Fetch Video Media",
         "configuration": {
           "apiConfig": {
             "method": "GET",

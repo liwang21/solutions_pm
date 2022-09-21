@@ -27,9 +27,10 @@
                 }
             },
             "baseSelector": {
-                "type": "JSON",
-                "header": "Entity Container",
-                "path": "[*]"
+                "jsonSelector": {
+                    "label": "label",
+                    "content": "[*]"
+                }
             },
             "input": [
                 {
