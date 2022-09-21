@@ -11,10 +11,8 @@
                 "apiConfig": {
                     "method": "GET",
                     "url": "https://api.wistia.com/v1/medias.json",
-                    "authentication": {
-                        "bearerToken": "[[bearerToken]]"
-                    },
-                    "paginationControl": {
+                    "bearerToken": "[[bearerToken]]",
+                    "pagination": {
                         "pageBasedPagination": {
                             "pageKey": "page",
                             "pageStartValue": 1,
@@ -44,11 +42,11 @@
                             "stereotype": "SIMPLE",
                             "maxLength": 100,
                             "contentFlags": {
-                                "noHtmlTags": false
+                                "noHtmlTags": true
                             }
                         }
                     },
-                    "sensitive": false
+                    "sensitive": true
                 }
             ]
         }
