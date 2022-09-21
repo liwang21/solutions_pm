@@ -36,7 +36,7 @@
                 {
                     "id": "bearerToken",
                     "name": "Bearer Token",
-                    "tooltip": "The master token automatically generated for your Wistia account. You can find it in the API Tab of your Account Settings.",
+                    "tooltip": "The master token automatically generated for your Wistia account. You can find it in the API tab of your Account Settings.",
                     "typeId": "type.string",
                     "type": {
                         "stringType": {
