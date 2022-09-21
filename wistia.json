@@ -6,7 +6,6 @@
         {
             "id": "fetchVideos",
             "name": "Fetch Videos",
-            "productFeatureId": [540],
             "configuration": {
                 "apiConfig": {
                     "method": "GET",
@@ -17,9 +16,7 @@
                     "paginationControl": {
                         "pageBasedPagination": {
                             "pageKey": "page",
-                            "pageStartValue": 1,
-                            "limitKey": "per_page",
-                            "limitValue": 100
+                            "limitKey": "per_page"
                         }
                     },
                     "perSecondRequestLimit": 10,
