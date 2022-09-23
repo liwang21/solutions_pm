@@ -99,7 +99,7 @@
         ]
       },
       {
-        "id": "fetchRemoteVideoMedia",
+        "id": "fetchVideoMedia",
         "name": "Fetch Video Media",
         "configuration": {
           "apiConfig": {
@@ -195,9 +195,9 @@
             "sensitive": false
           },
           {
-            "id": "entityTypeID",
-            "name": "Drupal Entity Type ID ",
-            "tooltip": "The ID of the entity type in Drupal that you'd like to fetch.  You can find the custom entity type ID in your Drupal account.",
+            "id": "mediaTypeID",
+            "name": "Drupal Media Type ID ",
+            "tooltip": "The ID of the custom media type in Drupal that you'd like to fetch.  You can find the custom media type ID in your Drupal account.",
             "typeId": "type.string",
             "type": {
               "stringType": {
