@@ -57,10 +57,7 @@
                     "type": {
                         "stringType": {
                             "stereotype": "SIMPLE",
-                            "maxLength": 200,
-                            "contentFlags": {
-                                "noHtmlTags": true
-                            }
+                            "maxLength": 200
                         }
                     },
                     "sensitive": true
@@ -117,15 +114,12 @@
                 {
                     "id": "APIKey",
                     "name": "API Key",
-                    "tooltip": "Provide your API key as your username. If you are an admin on your account, you can generate an API Key from Organization settings > API Credentials page.",
+                    "tooltip": "Provide your API key. If you are an admin on your account, you can generate an API Key from Organization settings > API Credentials page.",
                     "typeId": "type.string",
                     "type": {
                         "stringType": {
                             "stereotype": "SIMPLE",
-                            "maxLength": 200,
-                            "contentFlags": {
-                                "noHtmlTags": true
-                            }
+                            "maxLength": 200
                         }
                     },
                     "sensitive": true
