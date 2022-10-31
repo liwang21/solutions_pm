@@ -1,8 +1,8 @@
 {
     "operation": [
       {
-        "id": "fetchDocumentMediaType",
-        "name": "Fetch Document Media Type",
+        "id": "fetchDocumentMedia",
+        "name": "Fetch Document Media",
         "configuration": {
           "apiConfig": {
             "method": "GET",
@@ -50,8 +50,8 @@
         ]
       },
       {
-        "id": "fetchImageMediaType",
-        "name": "Fetch Image Media Type",
+        "id": "fetchImageMedia",
+        "name": "Fetch Image Media",
         "configuration": {
           "apiConfig": {
             "method": "GET",
@@ -99,8 +99,8 @@
         ]
       },
       {
-        "id": "fetchVideoMediaType",
-        "name": "Fetch Video Media Type",
+        "id": "fetchVideoMedia",
+        "name": "Fetch Video Media",
         "configuration": {
           "apiConfig": {
             "method": "GET",
