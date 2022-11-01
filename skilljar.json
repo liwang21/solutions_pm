@@ -41,7 +41,7 @@
                 {
                     "id": "domainName",
                     "name": "Domain Name",
-                    "tooltip": "The custom domain of your Skilljar training site",
+                    "tooltip": "The custom domain of your Skilljar training site.",
                     "typeId": "type.string",
                     "type": {
                         "stringType": {
@@ -53,7 +53,7 @@
                 {
                     "id": "APIKey",
                     "name": "API Key",
-                    "tooltip": "Provide your API key as your username. If you are an admin on your account, you can generate an API Key from Organization settings > API Credentials page.",
+                    "tooltip": "If you are an admin on your account, you can generate an API Key from Organization settings > API Credentials page.",
                     "typeId": "type.string",
                     "type": {
                         "stringType": {
@@ -103,7 +103,7 @@
                 {
                     "id": "domainName",
                     "name": "Domain Name",
-                    "tooltip": "The custom domain of your Skilljar training site",
+                    "tooltip": "The custom domain of your Skilljar training site.",
                     "typeId": "type.string",
                     "type": {
                         "stringType": {
