@@ -18,9 +18,10 @@
                         ]
                     },
                     "pagination": {
-                        "pageBasedPagination": {
-                            "pageKey": "page",
-                            "pageStartValue": 1
+                        "cursorPagination": {
+                            "cursor": "next",
+                            "cursorType": "FULL_URL",
+                            "detectCursorInHeader": false
                         }
                     },
                     "headers": {},
@@ -74,15 +75,15 @@
                     "url": "https://api.skilljar.com/v1/domains/[[domainName]]/published-courses",
                     "basicAuth": {
                         "username": "[[APIKey]]",
-                        "password": "",
                         "required": [
                             "username"
                         ]
                     },
                     "pagination": {
-                        "pageBasedPagination": {
-                            "pageKey": "page",
-                            "pageStartValue": 1
+                        "cursorPagination": {
+                            "cursor": "next",
+                            "cursorType": "FULL_URL",
+                            "detectCursorInHeader": false
                         }
                     },
                     "headers": {},
@@ -114,7 +115,7 @@
                 {
                     "id": "APIKey",
                     "name": "API Key",
-                    "tooltip": "Provide your API key. If you are an admin on your account, you can generate an API Key from Organization settings > API Credentials page.",
+                    "tooltip": "If you are an admin on your account, you can generate an API Key from Organization settings > API Credentials page.",
                     "typeId": "type.string",
                     "type": {
                         "stringType": {
