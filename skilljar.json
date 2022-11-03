@@ -12,10 +12,7 @@
                     "method": "GET",
                     "url": "https://api.skilljar.com/v1/domains/[[domainName]]/published-courses",
                     "basicAuth": {
-                        "username": "[[APIKey]]",
-                        "required": [
-                            "username"
-                        ]
+                        "username": "[[APIKey]]"
                     },
                     "pagination": {
                         "cursorPagination": {
@@ -26,7 +23,7 @@
                     },
                     "headers": {},
                     "queryParams": {
-                        "include_searchable_content": true
+                        "include_searchable_content": "true"
                     },
                     "format": "JSON"
             }
@@ -48,7 +45,8 @@
                             "stereotype": "SIMPLE",
                             "maxLength": 200
                         }
-                    }
+                    },
+                    "sensitive": false
                 },
                 {
                     "id": "APIKey",
@@ -74,10 +72,7 @@
                     "method": "GET",
                     "url": "https://api.skilljar.com/v1/domains/[[domainName]]/published-courses",
                     "basicAuth": {
-                        "username": "[[APIKey]]",
-                        "required": [
-                            "username"
-                        ]
+                        "username": "[[APIKey]]"
                     },
                     "pagination": {
                         "cursorPagination": {
@@ -88,7 +83,7 @@
                     },
                     "headers": {},
                     "queryParams": {
-                        "include_searchable_content": true
+                        "include_searchable_content": "true"
                     },
                     "format": "JSON"
             }
@@ -110,7 +105,8 @@
                             "stereotype": "SIMPLE",
                             "maxLength": 200
                         }
-                    }
+                    },
+                    "sensitive": false
                 },
                 {
                     "id": "APIKey",
