@@ -1,0 +1,139 @@
+{
+    "id": "kustomer",
+    "name": "Kustomer",
+    "logo": "kustomer-icon.png",
+    "operation": [
+        {
+            "id": "fetchArticles",
+            "name": "Fetch Articles",
+            "productFeatureId": [540],
+            "configuration": {
+                "apiConfig": {
+                    "method": "GET",
+                    "url": "https://api.kustomerapp.com/v1/kb/articles",
+                    "apiKey": {
+                        "key": "Authorization",
+                        "value": "Bearer [[apiKey]]",
+                        "setAsHeader": true
+                    },
+                    "pagination": {
+                        "cursorPagination": {
+                            "cursor": "links.next",
+                            "cursorType": "RELATIVE_URL",
+                            "detectCursorInHeader": false
+                        }
+                    },
+                    "rateLimit": {
+                        "unit": "MINUTE",
+                        "quantity": 300
+                    },
+                    "headers": {},
+                    "queryParams": {
+                        "Content-Type": "application/json"
+                    },
+                    "format": "JSON"
+            }
+        },
+            "baseSelector": {
+                "jsonSelector": {
+                    "label": "label",
+                    "content": "data"
+                }
+            },
+            "input": [
+                {
+                    "id": "domain",
+                    "name": "KB Domain",
+                    "tooltip": "The default or custom domain of your Kustomer Knowledge Base Site. You can find it by going to Settings > Knowledge Base > Configuration.",
+                    "typeId": "type.string",
+                    "type": {
+                        "stringType": {
+                            "stereotype": "SIMPLE",
+                            "maxLength": 200
+                        }
+                    },
+                    "sensitive": false
+                },
+                {
+                    "id": "apiKey",
+                    "name": "API Key",
+                    "tooltip": "If you are an admin on your Kustomer account, you can generate an API Key from Settings > Security > API Keys.",
+                    "typeId": "type.string",
+                    "type": {
+                        "stringType": {
+                            "stereotype": "SIMPLE",
+                            "maxLength": 200
+                        }
+                    },
+                    "sensitive": true
+                }
+            ]
+        },
+        {
+            "id": "fetchConversations",
+            "name": "Fetch Conversations",
+            "productFeatureId": [540],
+            "configuration": {
+                "apiConfig": {
+                    "method": "GET",
+                    "url": "https://api.kustomerapp.com/v1/conversations",
+                    "apiKey": {
+                        "key": "Authorization",
+                        "value": "Bearer [[apiKey]]",
+                        "setAsHeader": true
+                    },
+                    "pagination": {
+                        "cursorPagination": {
+                            "cursor": "links.next",
+                            "cursorType": "RELATIVE_URL",
+                            "detectCursorInHeader": false
+                        }
+                    },
+                    "rateLimit": {
+                        "unit": "MINUTE",
+                        "quantity": 300
+                    },
+                    "headers": {},
+                    "queryParams": {
+                        "Content-Type": "application/json"
+                    },
+                    "format": "JSON"
+            }
+        },
+            "baseSelector": {
+                "jsonSelector": {
+                    "label": "label",
+                    "content": "data"
+                }
+            },
+            "input": [
+                {
+                    "id": "domain",
+                    "name": "KB Domain",
+                    "tooltip": "The default or custom domain of your Kustomer Knowledge Base Site. You can find it by going to Settings > Knowledge Base > Configuration.",
+                    "typeId": "type.string",
+                    "type": {
+                        "stringType": {
+                            "stereotype": "SIMPLE",
+                            "maxLength": 200
+                        }
+                    },
+                    "sensitive": false
+                },
+                {
+                    "id": "apiKey",
+                    "name": "API Key",
+                    "tooltip": "If you are an admin on your Kustomer account, you can generate an API Key from Settings > Security > API Keys.",
+                    "typeId": "type.string",
+                    "type": {
+                        "stringType": {
+                            "stereotype": "SIMPLE",
+                            "maxLength": 200
+                        }
+                    },
+                    "sensitive": true
+                }
+            ]
+        }
+    ]
+}
