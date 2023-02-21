@@ -27,10 +27,10 @@
                         "unit": "MINUTE",
                         "quantity": 300
                     },
-                    "headers": {},
-                    "queryParams": {
+                    "headers": {
                         "Content-Type": "application/json"
                     },
+                    "queryParams": {},
                     "format": "JSON"
             }
         },
@@ -93,10 +93,10 @@
                         "unit": "MINUTE",
                         "quantity": 300
                     },
-                    "headers": {},
-                    "queryParams": {
+                    "headers": {
                         "Content-Type": "application/json"
                     },
+                    "queryParams": {},
                     "format": "JSON"
             }
         },
