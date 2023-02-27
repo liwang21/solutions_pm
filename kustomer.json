@@ -108,9 +108,9 @@
             },
             "input": [
                 {
-                    "id": "domain",
-                    "name": "KB Domain",
-                    "tooltip": "The default or custom domain of your Kustomer Knowledge Base Site. You can find it by going to Settings > Knowledge Base > Configuration.",
+                    "id": "apiKey",
+                    "name": "API Key",
+                    "tooltip": "If you are an admin on your Kustomer account, you can generate an API Key from Settings > Security > API Keys.",
                     "typeId": "type.string",
                     "type": {
                         "stringType": {
@@ -118,8 +118,48 @@
                             "maxLength": 200
                         }
                     },
-                    "sensitive": false
-                },
+                    "sensitive": true
+                }
+            ]
+        },
+        {
+            "id": "fetchMessages",
+            "name": "Fetch Messages",
+            "productFeatureId": [540],
+            "configuration": {
+                "apiConfig": {
+                    "method": "GET",
+                    "url": "https://api.kustomerapp.com/v1/messages",
+                    "apiKey": {
+                        "key": "Authorization",
+                        "value": "Bearer [[apiKey]]",
+                        "setAsHeader": true
+                    },
+                    "pagination": {
+                        "cursorPagination": {
+                            "cursor": "links.next",
+                            "cursorType": "RELATIVE_URL",
+                            "detectCursorInHeader": false
+                        }
+                    },
+                    "rateLimit": {
+                        "unit": "MINUTE",
+                        "quantity": 300
+                    },
+                    "headers": {
+                        "Content-Type": "application/json"
+                    },
+                    "queryParams": {},
+                    "format": "JSON"
+            }
+        },
+            "baseSelector": {
+                "jsonSelector": {
+                    "label": "label",
+                    "content": "data"
+                }
+            },
+            "input": [
                 {
                     "id": "apiKey",
                     "name": "API Key",
