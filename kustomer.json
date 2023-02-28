@@ -42,19 +42,6 @@
             },
             "input": [
                 {
-                    "id": "domain",
-                    "name": "KB Domain",
-                    "tooltip": "The default or custom domain of your Kustomer Knowledge Base Site. You can find it by going to Settings > Knowledge Base > Configuration.",
-                    "typeId": "type.string",
-                    "type": {
-                        "stringType": {
-                            "stereotype": "SIMPLE",
-                            "maxLength": 200
-                        }
-                    },
-                    "sensitive": false
-                },
-                {
                     "id": "apiKey",
                     "name": "API Key",
                     "tooltip": "If you are an admin on your Kustomer account, you can generate an API Key from Settings > Security > API Keys.",
