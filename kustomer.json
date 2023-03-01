@@ -1,7 +1,7 @@
 {
     "id": "kustomer",
     "name": "Kustomer",
-    "logo": "kustomer-icon.png",
+    "logo": "kustomer-logo.png",
     "operation": [
         {
             "id": "fetchArticles",
@@ -23,10 +23,7 @@
                             "detectCursorInHeader": false
                         }
                     },
-                    "rateLimit": {
-                        "unit": "MINUTE",
-                        "quantity": 300
-                    },
+                    "perMinuteRequestLimit": 300,
                     "headers": {
                         "Content-Type": "application/json"
                     },
@@ -76,10 +73,7 @@
                             "detectCursorInHeader": false
                         }
                     },
-                    "rateLimit": {
-                        "unit": "MINUTE",
-                        "quantity": 300
-                    },
+                    "perMinuteRequestLimit": 300,
                     "headers": {
                         "Content-Type": "application/json"
                     },
@@ -129,10 +123,7 @@
                             "detectCursorInHeader": false
                         }
                     },
-                    "rateLimit": {
-                        "unit": "MINUTE",
-                        "quantity": 300
-                    },
+                    "perMinuteRequestLimit": 300,
                     "headers": {
                         "Content-Type": "application/json"
                     },
