@@ -11,11 +11,7 @@
                 "apiConfig": {
                     "method": "GET",
                     "url": "https://api.kustomerapp.com/v1/kb/articles",
-                    "apiKey": {
-                        "key": "Authorization",
-                        "value": "Bearer [[apiKey]]",
-                        "setAsHeader": true
-                    },
+                    "bearerToken": "[[apiKey]]",
                     "pagination": {
                         "cursorPagination": {
                             "cursor": "links.next",
@@ -61,11 +57,7 @@
                 "apiConfig": {
                     "method": "GET",
                     "url": "https://api.kustomerapp.com/v1/conversations",
-                    "apiKey": {
-                        "key": "Authorization",
-                        "value": "Bearer [[apiKey]]",
-                        "setAsHeader": true
-                    },
+                    "bearerToken": "[[apiKey]]",
                     "pagination": {
                         "cursorPagination": {
                             "cursor": "links.next",
@@ -111,11 +103,7 @@
                 "apiConfig": {
                     "method": "GET",
                     "url": "https://api.kustomerapp.com/v1/messages",
-                    "apiKey": {
-                        "key": "Authorization",
-                        "value": "Bearer [[apiKey]]",
-                        "setAsHeader": true
-                    },
+                    "bearerToken": "[[apiKey]]",
                     "pagination": {
                         "cursorPagination": {
                             "cursor": "links.next",
