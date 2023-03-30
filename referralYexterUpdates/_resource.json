@@ -1,0 +1,8 @@
+{
+    "$id": "talenthubReferralPointsPlugin",
+    "$schema": "https://schema.yext.com/config/platform/plugin/v1",
+    "globals": {
+      "API_KEY": "030352022c8d693998f7e4d893474881",
+      "ACCOUNT_ID": "3829319"
+    }
+  }
