@@ -1,0 +1,154 @@
+{
+    "id": "googleDrive",
+    "name": "Google Drive",
+    "logo": "google-drive-icon.svg",
+    "description": "Link your Google account and use the Google Drive Connector to pull in your Google Drive files. See our <a href=\"https://hitchhikers.yext.com/docs/connectors/google-drive-connector-source/\" target=\"blank\" rel=\"noreferrer\">Reference documentation</a> on Hitchhikers for more details.",
+    "operation": [
+      {
+        "id": "fetchFiles",
+        "name": "Fetch Files",
+        "description": "Fetch the metadata and body content of your Google Drive files.",
+        "configuration": {
+          "apiConfig": {
+            "customSourceKey": "googleDriveFetchFiles",
+            "method": "GET",
+            "url": "https://www.googleapis.com/drive/v3/files",
+            "oauth": {
+              "linkedAccountId": "[[googleDriveLinkedAccount]]"
+            },
+            "pagination": {
+              "cursorPagination": {
+                "pageKey": "pageToken",
+                "cursor": "nextPageToken",
+                "cursorType": "TOKEN",
+                "detectCursorInHeader": false
+              }
+            },
+            "headers": {
+              "Accept": "application/json"
+            },
+            "queryParams": {
+              "pageSize": "10",
+              "corpora": "[[fileScope]]",
+              "q": "trashed=false",
+              "fields": "nextPageToken,files/id,files/name,files/mimeType,files/starred,files/webContentLink,files/webViewLink,files/createdTime,files/modifiedTime,files/owners/displayName,files/owners/permissionId,files/owners/emailAddress,files/lastModifyingUser/displayName,files/lastModifyingUser/permissionId,files/lastModifyingUser/emailAddress,files/shared,files/permissions,files/originalFilename,files/size,files/imageMediaMetadata,files/videoMediaMetadata,files/permissionIds,files/exportLinks,files/driveId"
+            },
+            "format": "JSON"
+          }
+        },
+        "isCustom": true,
+        "baseSelector": {
+          "jsonSelector": {
+            "label": "Files",
+            "content": "files"
+          }
+        },
+        "productFeatureId": [
+          511
+        ],
+        "input": [
+          {
+            "id": "googleDriveLinkedAccount",
+            "name": "Google Drive Linked Account",
+            "tooltip": "The Google Drive account to use to fetch data from.",
+            "typeId": "type.linked_account_reference",
+            "type": {
+              "linkedAccountReferenceType": {
+                "supportedProvider": ["google"]
+              }
+            },
+            "sensitive": false
+          },
+          {
+            "id": "fileScope",
+            "name": "File Scope",
+            "tooltip": "The source of the files to list",
+            "typeId": "type.option",
+            "type": {
+              "optionType": {
+                "option": [
+                  {
+                    "textValue": "domain",
+                    "displayName": "Domain"
+                  },
+                  {
+                    "textValue": "user",
+                    "displayName": "User"
+                  }
+                ]
+              }
+            },
+            "sensitive": false
+          }
+        ]
+      },
+      {
+        "id": "fetchFilesByFolder",
+        "name": "Fetch Files by Folder",
+        "description": "Fetch the metadata of your Google Drive files within a specified folder.",
+        "configuration": {
+          "apiConfig": {
+            "customSourceKey": "googleDriveFetchFilesByFolder",
+            "method": "GET",
+            "url": "https://www.googleapis.com/drive/v3/files/?q=%22[[folderId]]%22+in+parents+and+trashed=false",
+            "oauth": {
+              "linkedAccountId": "[[googleDriveLinkedAccount]]"
+            },
+            "pagination": {
+              "cursorPagination": {
+                "pageKey": "pageToken",
+                "cursor": "nextPageToken",
+                "cursorType": "TOKEN",
+                "detectCursorInHeader": false
+              }
+            },
+            "headers": {
+              "Accept": "application/json"
+            },
+            "queryParams": {
+              "pageSize": "10",
+              "fields": "nextPageToken,files/id,files/name,files/mimeType,files/starred,files/webContentLink,files/webViewLink,files/createdTime,files/modifiedTime,files/owners/displayName,files/owners/permissionId,files/owners/emailAddress,files/lastModifyingUser/displayName,files/lastModifyingUser/permissionId,files/lastModifyingUser/emailAddress,files/shared,files/permissions,files/originalFilename,files/size,files/imageMediaMetadata,files/videoMediaMetadata,files/permissionIds,files/exportLinks,files/driveId"
+            },
+            "format": "JSON"
+          }
+        },
+        "baseSelector": {
+          "jsonSelector": {
+            "label": "Files",
+            "content": "files"
+          }
+        },
+        "productFeatureId": [
+          511,
+          641
+        ],
+        "input": [
+          {
+            "id": "googleDriveLinkedAccount",
+            "name": "Google Drive Linked Account",
+            "tooltip": "The Google Drive account to use to fetch data from.",
+            "typeId": "type.linked_account_reference",
+            "type": {
+              "linkedAccountReferenceType": {
+                "supportedProvider": ["google"]
+              }
+            },
+            "sensitive": false
+          },
+          {
+            "id": "folderId",
+            "name": "Folder ID",
+            "tooltip": "The ID of the Google Drive Folder you want to pull files from. This can be found in the folder URL: https://drive.google.com/drive/folders/{folder-id}.",
+            "typeId": "type.option",
+            "type": {
+                "stringType": {
+                  "stereotype": "SIMPLE",
+                  "maxLength": 300
+                }
+            },
+            "sensitive": false
+          }
+        ]
+      }
+    ]
+}
