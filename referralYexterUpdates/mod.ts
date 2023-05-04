@@ -3,7 +3,7 @@ const referralHiredPoints = 25;
 
 //API request parameters
 const params = new URLSearchParams({
-    api_key: '8af547b9801a9f538985248ec5dbb0e9',
+    api_key: '1c95341425ee2191ed3bcc541ac8e1f0',
     v: '20230330'
 })
 
@@ -66,7 +66,7 @@ export async function updateReferral(event:any) {
     }
     //add 25 points if existing referral is hired
     else if (isReferralHired(event)) {
-        const linkedYexter = await fetch (`https://api.yext.com/v2/accounts/3829319/entities/${event.primaryProfile.c_yexterWhoReferredThisPerson[0]}?${params.toString()}`, {
+        const linkedYexter = await fetch (`https://api.yext.com/v2/accounts/3151361/entities/${event.primaryProfile.c_yexterWhoReferredThisPerson[0]}?${params.toString()}`, {
             method: "GET",
             headers
             }).then(response => response.json())
@@ -90,7 +90,7 @@ export function addReferralPoints(yexter: object, pointValue) {
 }
 //function that executes the PUT request to update referral points
 export async function putRequest(referralPoints: string, yexterID: string) {
-    const request = new Request(`https://api.yext.com/v2/accounts/3829319/entities/${yexterID}?${params.toString()}`, {
+    const request = new Request(`https://api.yext.com/v2/accounts/3151361/entities/${yexterID}?${params.toString()}`, {
             method: "PUT",
             headers,
             body: JSON.stringify({
