@@ -103,12 +103,11 @@ export async function putRequest(referralPoints: string, yexterID: string) {
 //function that checks that c_linkedReferrals has been updated
 export function isNewReferral(event: WebhookEventYexter) {
     //returns TRUE if the Linked Referral has been changed, returns FALSE otherwise
-    return event.meta.eventType === "ENTITY_UPDATED" && 
-    (event.changedFields.fieldNames.includes("c_linkedReferrals"))
+    return event.changedFields.fieldNames.includes("c_linkedReferrals") && event.meta.eventType === "ENTITY_UPDATED"
 }
 
 //function that checks a referral has been hired
 export function isReferralHired(event: WebhookEventReferral) {
     //returns TRUE if the Referral Status has been updated to HIRED, returns FALSE otherwise
-    return event.meta.eventType === "ENTITY_UPDATED" && (event.changedFields.fieldNames.includes("c_referralStatus")) && event.primaryProfile?.c_referralStatus === "HIRED";
+    return event.changedFields.fieldNames.includes("c_referralStatus") && event.primaryProfile?.c_referralStatus === "HIRED" && event.meta.eventType === "ENTITY_UPDATED";
 }
